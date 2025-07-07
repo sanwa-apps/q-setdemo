@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ミミル - 応募者の本音に耳を傾ける採用AIチャットボット</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* カスタムカラーの定義 */
+        :root {
+            --main-color: #01a17f;
+            --main-color-dark: #018a6b;
+            --main-color-light: #e6f5f2;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(45deg, rgba(1, 161, 127, 0.1), rgba(255, 255, 255, 0.1));
+        }
+        .text-main { color: var(--main-color); }
+        .bg-main { background-color: var(--main-color); }
+        .bg-main-dark { background-color: var(--main-color-dark); }
+        .bg-main-light { background-color: var(--main-color-light); }
+        .border-main { border-color: var(--main-color); }
+        
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+        .chart-bar {
+            transition: width 1.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-main">ミミル</h1>
+            <div>
+                <a href="#contact" class="bg-main text-white font-bold py-2 px-4 rounded-lg cta-button hover:bg-main-dark">話を聞いてみる</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg py-20 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <p class="text-main font-bold text-2xl md:text-3xl mb-4">応募者の本音に<span class="text-4xl md:text-5xl">『耳』</span>を傾ける。</p>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                        面接で聞けない、その不安を<br class="hidden sm:block">AIチャットボットが解決
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-xl mx-auto md:mx-0">
+                        AIチャットボット「ミミル」が、応募前の不安や疑問を24時間365日解消し、企業と応募者の"もったいない"ミスマッチを防ぎます。
+                    </p>
+                </div>
+                <div class="flex justify-center items-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Illustration -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg relative">
+                            <!-- Person Icon with Question -->
+                            <div class="flex items-center mb-4">
+                                <div class="bg-gray-200 p-3 rounded-full">
+                                     <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                </div>
+                                <div class="ml-4 bg-gray-100 p-3 rounded-lg rounded-bl-none">
+                                    <p class="text-sm text-gray-700">本当の残業時間って…？</p>
+                                </div>
+                            </div>
+                            <!-- Bot Icon with Answer -->
+                             <div class="flex items-center justify-end">
+                                <div class="mr-4 bg-main-light p-3 rounded-lg rounded-br-none text-right">
+                                    <p class="text-sm text-gray-700">月平均は10時間程度ですよ！</p>
+                                </div>
+                                <div class="bg-main p-3 rounded-full">
+                                     <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                 <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg inline-block shadow-md">
+                    <p class="text-xl font-bold text-red-600">実は、84%の応募者が</p>
+                    <p class="text-2xl md:text-3xl font-bold text-gray-800">面接中に聞きたいことを質問できていない</p>
+                </div>
+            </div>
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">この<span class="text-red-600">"聞けない"</span>が引き起こす<span class="text-main">採用課題</span></h3>
+                <p class="text-gray-600 mt-4">一つでも当てはまったら、「ミミル」がお力になれるかもしれません。</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-100 p-8 rounded-lg">
+                    <h4 class="font-bold text-xl mb-2">ミスマッチによる早期離職</h4>
+                    <p>入社後に「こんなはずじゃなかった」が発覚。採用コストが無駄に…</p>
+                </div>
+                <div class="bg-gray-100 p-8 rounded-lg">
+                    <h4 class="font-bold text-xl mb-2">採用担当者の工数逼迫</h4>
+                    <p>同じような質問への対応に追われ、コア業務に集中できない…</p>
+                </div>
+                <div class="bg-gray-100 p-8 rounded-lg">
+                    <h4 class="font-bold text-xl mb-2">応募率・歩留まりの低下</h4>
+                    <p>応募へのハードルが高く、魅力的な候補者が途中で離脱してしまう…</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution/Features Section -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                 <h3 class="text-3xl md:text-4xl font-bold text-gray-800">AIチャットボット「ミミル」の<span class="text-main">3つの機能</span></h3>
+                <p class="text-gray-600 mt-4">貴社の採用活動を強力にサポートします。</p>
+            </div>
+            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8 text-center">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md feature-card">
+                    <div class="text-main mb-4">
+                        <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-2xl mb-3">質問への自動対応</h4>
+                    <p class="text-gray-600">24時間365日、求職者からの質問にAIが自動回答。聞きにくい質問にも匿名で対応し、応募者の不安を解消します。</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md feature-card">
+                    <div class="text-main mb-4">
+                       <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-2xl mb-3">匿名回答データの分析</h4>
+                    <p class="text-gray-600">候補者が何に不安を感じているのか、どんな質問が多いかを客観的なデータで把握。採用活動の課題を可視化します。</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md feature-card">
+                    <div class="text-main mb-4">
+                        <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-2xl mb-3">レポート機能</h4>
+                    <p class="text-gray-600">蓄積データから改善案などをまとめたレポートを提出。データに基づいた採用活動の質向上をサポートします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">数字で見る「ミミル」の<span class="text-main">導入効果</span></h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Chart 1 -->
+                <div class="text-center">
+                    <h4 class="font-bold text-xl mb-4">採用応募の途中離脱率</h4>
+                    <div class="bg-gray-200 rounded-full h-8 w-full relative">
+                        <div class="bg-main h-8 rounded-full chart-bar flex items-center justify-end pr-4" style="width: 75%;">
+                           <span class="text-white font-bold text-lg">25%改善</span>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-gray-600">応募完了までのハードルを下げ、機会損失を防ぎます。</p>
+                </div>
+                <!-- Chart 2 -->
+                <div class="text-center">
+                    <h4 class="font-bold text-xl mb-4">早期離職率 (入社後3ヶ月以内)</h4>
+                    <div class="bg-gray-200 rounded-full h-8 w-full relative">
+                        <div class="bg-main h-8 rounded-full chart-bar flex items-center justify-end pr-4" style="width: 85%;">
+                            <span class="text-white font-bold text-lg">15%改善</span>
+                        </div>
+                    </div>
+                     <p class="mt-2 text-gray-600">入社前後のギャップをなくし、定着率を向上させます。</p>
+                </div>
+                <!-- Chart 3 -->
+                <div class="text-center">
+                    <h4 class="font-bold text-xl mb-4">よくある質問への対応工数</h4>
+                    <div class="bg-gray-200 rounded-full h-8 w-full relative">
+                        <div class="bg-main h-8 rounded-full chart-bar flex items-center justify-end pr-4" style="width: 50%;">
+                            <span class="text-white font-bold text-lg">50%削減</span>
+                        </div>
+                    </div>
+                     <p class="mt-2 text-gray-600">採用担当者がコア業務に集中できる環境を作ります。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merit Section -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+             <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-800">「ミミル」導入がもたらす<span class="text-main">6つのメリット</span></h3>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0"><div class="bg-main-light text-main p-2 rounded-full"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div></div>
+                    <div><h4 class="font-bold text-lg">ミスマッチを防止</h4><p class="text-gray-600">応募前に相互理解が深まり、入社後のギャップを減らします。</p></div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0"><div class="bg-main-light text-main p-2 rounded-full"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01"></path></svg></div></div>
+                    <div><h4 class="font-bold text-lg">採用コスト・工数削減</h4><p class="text-gray-600">定型業務を自動化し、採用担当者はコア業務に集中できます。</p></div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0"><div class="bg-main-light text-main p-2 rounded-full"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 18.734V6a2 2 0 012-2h4a2 2 0 012 2v4z"></path></svg></div></div>
+                    <div><h4 class="font-bold text-lg">応募率・歩留まり改善</h4><p class="text-gray-600">応募へのハードルを下げ、選考離脱を防ぎます。</p></div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0"><div class="bg-main-light text-main p-2 rounded-full"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg></div></div>
+                    <div><h4 class="font-bold text-lg">採用ページの信頼度向上</h4><p class="text-gray-600">透明性の高い情報開示で、企業の信頼性を高めます。</p></div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0"><div class="bg-main-light text-main p-2 rounded-full"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></div></div>
+                    <div><h4 class="font-bold text-lg">面接や選考準備に集中</h4><p class="text-gray-600">候補者の本質を見極めるための時間を創出します。</p></div>
+                </div>
+                 <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0"><div class="bg-main-light text-main p-2 rounded-full"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div></div>
+                    <div><h4 class="font-bold text-lg">採用活動のデータ化</h4><p class="text-gray-600">感覚的な採用から、データに基づいた戦略的な採用へ。</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="bg-main text-white">
+        <div class="container mx-auto px-6 py-16 text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">さあ、採用のミスマッチをなくし、<br>理想の候補者と出会いませんか？</h3>
+            <p class="mb-8 text-indigo-100 opacity-90">まずはオンラインで、お気軽にご相談ください。</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="https://calendar.app.google.com/avHw85rbQ6wCy63z9" target="_blank" class="bg-white text-main font-bold py-4 px-8 rounded-lg text-lg cta-button w-full md:w-auto">
+                    話を聞いてみる
+                </a>
+                <a href="https://calendar.app.google.com/avHw85rbQ6wCy63z9" target="_blank" class="bg-main-dark text-white font-bold py-4 px-8 rounded-lg text-lg cta-button hover:bg-gray-800 border border-main w-full md:w-auto">
+                    デモを予約する
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h4 class="font-bold text-lg">株式会社Set Me Free Holdings</h4>
+                    <p class="text-gray-400 text-sm">〒150-0002 東京都渋谷区渋谷2-7-14 VORT青山302</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <a href="https://setmefree-hd.jp/" target="_blank" class="text-gray-400 hover:text-white px-3">会社概要</a>
+                    <a href="https://setmefree-hd.jp/" target="_blank" class="text-gray-400 hover:text-white px-3">プライバシーポリシー</a>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 border-t border-gray-700 mt-8 pt-6">
+                &copy; 2024 Set Me Free Holdings Co., Ltd.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
